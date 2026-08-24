@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,9 +10,9 @@
 
 <style>
 
-/* =========================
+/* ========================================
    BASIC
-========================= */
+======================================== */
 
 * {
     margin: 0;
@@ -31,11 +32,12 @@ body {
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* ========================================
+   HERO / COVER
+======================================== */
 
 .hero {
+
     height: 100vh;
     min-height: 650px;
 
@@ -50,35 +52,115 @@ body {
     background:
         linear-gradient(
             rgba(0,0,0,.55),
-            rgba(0,0,0,.9)
+            rgba(0,0,0,.92)
         ),
-        url("./photo1.jpg")
-        center / cover no-repeat;
+        url("./photo5.jpeg")
+        center center / cover no-repeat;
+
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
 
-    width: 90%;
-    max-width: 900px;
+/* Slow cinematic zoom */
 
-    animation: fadeIn 2s ease;
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        url("./photo5.jpeg")
+        center center / cover no-repeat;
+
+    z-index: 0;
+
+    animation: cinematicZoom 18s ease-in-out infinite alternate;
+
+    opacity: .45;
+
 }
 
-@keyframes fadeIn {
+
+@keyframes cinematicZoom {
+
     from {
-        opacity: 0;
-        transform: translateY(30px);
+        transform: scale(1);
     }
 
     to {
-        opacity: 1;
-        transform: translateY(0);
+        transform: scale(1.10);
     }
+
 }
 
+
+/* Dark cinematic overlay */
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.15),
+            rgba(0,0,0,.35),
+            #000
+        );
+
+    z-index: 1;
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 90%;
+
+    max-width: 900px;
+
+    animation: fadeIn 2s ease;
+
+}
+
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* Small gold text */
+
 .label {
+
     color: #d6b56a;
 
     font-family: Arial, sans-serif;
@@ -90,21 +172,39 @@ body {
     text-transform: uppercase;
 
     margin-bottom: 30px;
+
 }
 
+
+/* Main title */
+
 .hero h1 {
-    font-size: clamp(65px, 12vw, 150px);
+
+    font-size:
+        clamp(
+            65px,
+            12vw,
+            150px
+        );
 
     line-height: .82;
 
     font-weight: normal;
+
 }
+
 
 .gold {
+
     color: #d6b56a;
+
 }
 
+
+/* Hero description */
+
 .hero p {
+
     max-width: 650px;
 
     margin: 45px auto;
@@ -116,9 +216,14 @@ body {
     font-size: 14px;
 
     line-height: 2;
+
 }
 
+
+/* Begin button */
+
 .begin {
+
     padding: 17px 35px;
 
     background: #d6b56a;
@@ -138,21 +243,28 @@ body {
     cursor: pointer;
 
     transition: .4s;
+
 }
+
 
 .begin:hover {
-    transform: translateY(-4px);
+
+    transform:
+        translateY(-4px);
 
     box-shadow:
-        0 10px 40px rgba(214,181,106,.4);
+        0 10px 40px
+        rgba(214,181,106,.4);
+
 }
 
 
-/* =========================
+/* ========================================
    MUSIC
-========================= */
+======================================== */
 
 .music {
+
     min-height: 60vh;
 
     padding: 100px 7%;
@@ -173,25 +285,40 @@ body {
             #171208,
             #000 70%
         );
+
 }
 
+
 .music h2 {
-    font-size: clamp(45px, 7vw, 80px);
+
+    font-size:
+        clamp(
+            45px,
+            7vw,
+            80px
+        );
 
     font-weight: normal;
 
     line-height: .9;
+
 }
 
+
+/* Music button */
+
 .music-button {
+
     margin-top: 50px;
 
     width: 105px;
+
     height: 105px;
 
     border-radius: 50%;
 
-    border: 1px solid #d6b56a;
+    border:
+        1px solid #d6b56a;
 
     background: transparent;
 
@@ -200,15 +327,26 @@ body {
     font-size: 22px;
 
     cursor: pointer;
+
+    transition: .4s;
+
 }
 
+
 .music-button:hover {
+
     background: #d6b56a;
 
     color: #000;
+
+    transform:
+        scale(1.08);
+
 }
 
+
 .music-status {
+
     margin-top: 20px;
 
     color: #777;
@@ -220,36 +358,53 @@ body {
     letter-spacing: 3px;
 
     text-transform: uppercase;
+
 }
 
 
-/* =========================
+/* ========================================
    MESSAGE
-========================= */
+======================================== */
 
 .message {
+
     padding: 130px 8%;
 
     background: #080808;
+
 }
+
 
 .message-box {
+
     max-width: 780px;
 
-    margin: 60px auto 0;
+    margin:
+        60px auto 0;
+
 }
 
+
 .message-box h2 {
+
     color: #d6b56a;
 
-    font-size: clamp(45px, 6vw, 70px);
+    font-size:
+        clamp(
+            45px,
+            6vw,
+            70px
+        );
 
     font-weight: normal;
 
     margin-bottom: 45px;
+
 }
 
+
 .message-box p {
+
     color: #bbb;
 
     font-family: Arial, sans-serif;
@@ -259,9 +414,12 @@ body {
     line-height: 2;
 
     margin-bottom: 25px;
+
 }
 
+
 .signature {
+
     color: #d6b56a !important;
 
     font-family: Georgia, serif !important;
@@ -269,37 +427,49 @@ body {
     font-size: 34px !important;
 
     margin-top: 45px;
+
 }
 
 
-/* =========================
-   PHOTO SLIDESHOW
-========================= */
+/* ========================================
+   MEMORIES
+======================================== */
 
 .memories {
+
     padding: 130px 5%;
 
     background: #000;
 
     text-align: center;
+
 }
 
+
 .memories h2 {
-    font-size: clamp(45px, 7vw, 80px);
+
+    font-size:
+        clamp(
+            45px,
+            7vw,
+            80px
+        );
 
     line-height: .9;
 
     font-weight: normal;
 
     margin-bottom: 70px;
+
 }
 
 
-/*
+/* ========================================
    PHOTO FRAME
-*/
+======================================== */
 
 .photo-frame {
+
     position: relative;
 
     width: 100%;
@@ -314,7 +484,9 @@ body {
 
     background: #050505;
 
-    border: 1px solid rgba(214,181,106,.3);
+    border:
+        1px solid
+        rgba(214,181,106,.3);
 
     display: flex;
 
@@ -323,17 +495,21 @@ body {
     justify-content: center;
 
     overflow: hidden;
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.8);
+
 }
 
 
 /*
-   PHOTOS
-
-   contain = the entire photo is shown.
-   Nothing gets cropped.
+    All photos stay completely visible.
+    Nothing gets cropped.
 */
 
 .photo {
+
     position: absolute;
 
     max-width: 92%;
@@ -352,16 +528,21 @@ body {
 
     transition:
         opacity 2s ease-in-out;
+
 }
 
+
 .photo.show {
+
     opacity: 1;
+
 }
 
 
 /* Cinematic dark edges */
 
 .photo-frame::after {
+
     content: "";
 
     position: absolute;
@@ -376,12 +557,16 @@ body {
             transparent 55%,
             rgba(0,0,0,.55)
         );
+
 }
 
 
-/* Counter */
+/* ========================================
+   PHOTO COUNTER
+======================================== */
 
 .counter {
+
     position: absolute;
 
     z-index: 5;
@@ -397,14 +582,16 @@ body {
     font-size: 10px;
 
     letter-spacing: 3px;
+
 }
 
 
-/* =========================
-   FINAL
-========================= */
+/* ========================================
+   FINAL SECTION
+======================================== */
 
 .final {
+
     height: 100vh;
 
     min-height: 650px;
@@ -425,17 +612,28 @@ body {
             #19140b,
             #000 70%
         );
+
 }
 
+
 .final h2 {
-    font-size: clamp(65px, 11vw, 140px);
+
+    font-size:
+        clamp(
+            65px,
+            11vw,
+            140px
+        );
 
     line-height: .82;
 
     font-weight: normal;
+
 }
 
+
 .final p {
+
     margin-top: 50px;
 
     color: #aaa;
@@ -443,56 +641,85 @@ body {
     font-family: Arial, sans-serif;
 
     line-height: 2;
+
 }
 
+
 .heart {
+
     margin-top: 40px;
 
     color: #d6b56a;
 
     font-size: 40px;
 
-    animation: heartbeat 1.5s infinite;
+    animation:
+        heartbeat 1.5s infinite;
+
 }
 
+
 @keyframes heartbeat {
+
     0%, 100% {
-        transform: scale(1);
+
+        transform:
+            scale(1);
+
     }
 
     50% {
-        transform: scale(1.3);
+
+        transform:
+            scale(1.3);
+
     }
+
 }
 
 
-/* =========================
+/* ========================================
    MOBILE
-========================= */
+======================================== */
 
 @media (max-width: 700px) {
 
     .hero h1 {
+
         font-size: 70px;
+
     }
 
+
     .photo-frame {
+
         height: 70vh;
 
         min-height: 400px;
+
     }
+
 
     .photo {
+
         max-width: 90%;
+
         max-height: 90%;
+
     }
+
 
     .message {
+
         padding: 90px 7%;
+
     }
 
+
     .message-box p {
+
         font-size: 15px;
+
     }
 
 }
@@ -505,11 +732,14 @@ body {
 <body>
 
 
-<!-- =========================
+<!-- ========================================
      MUSIC
-========================= -->
+======================================== -->
 
-<audio id="song" loop preload="auto">
+<audio
+    id="song"
+    loop
+    preload="auto">
 
     <source
         src="./song.mp3"
@@ -518,16 +748,19 @@ body {
 </audio>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- ========================================
+     COVER
+======================================== -->
 
 <section class="hero">
 
     <div class="hero-content">
 
         <div class="label">
-            A little surprise for someone special
+
+            A LITTLE SURPRISE
+            FOR SOMEONE SPECIAL
+
         </div>
 
 
@@ -570,20 +803,23 @@ body {
 </section>
 
 
-<!-- =========================
-     MUSIC
-========================= -->
+<!-- ========================================
+     MUSIC SECTION
+======================================== -->
 
 <section class="music">
 
     <div class="label">
+
         A SONG FOR AMMA
+
     </div>
 
 
     <h2>
 
         Let the music<br>
+
         begin the memories.
 
     </h2>
@@ -610,54 +846,68 @@ body {
 </section>
 
 
-<!-- =========================
+<!-- ========================================
      MESSAGE
-========================= -->
+======================================== -->
 
 <section class="message">
 
     <div class="label">
+
         FROM MY HEART
+
     </div>
 
 
     <div class="message-box">
 
         <h2>
+
             Dear Amma,
+
         </h2>
 
 
         <p>
+
             There are so many things I could say,
             but somehow words never seem enough
             when it comes to you.
+
         </p>
 
 
         <p>
+
             Thank you for every smile,
             every sacrifice, every lesson,
             every hug, and every little thing
-            you've done for me.
+            you've done for us.
+
         </p>
 
 
         <p>
+
             Thank you for always being there,
             for making ordinary moments special,
             and for making life feel a little warmer.
+
         </p>
 
 
         <p>
+
             I hope today reminds you of just
             how loved and special you are.
+
         </p>
 
 
         <p class="signature">
+
             Happy Birthday, Amma. ❤️
+
         </p>
 
     </div>
@@ -665,14 +915,16 @@ body {
 </section>
 
 
-<!-- =========================
-     MEMORIES
-========================= -->
+<!-- ========================================
+     12 PHOTO SLIDESHOW
+======================================== -->
 
 <section class="memories">
 
     <div class="label">
+
         OUR MEMORIES
+
     </div>
 
 
@@ -681,7 +933,9 @@ body {
         Moments I'll<br>
 
         <span class="gold">
+
             always treasure.
+
         </span>
 
     </h2>
@@ -689,20 +943,32 @@ body {
 
     <div class="photo-frame">
 
+
+        <!-- PHOTO 1 -->
+
         <img
             src="./photo1.jpg"
             class="photo show"
             alt="Memory 1">
+
+
+        <!-- PHOTO 2 -->
 
         <img
             src="./photo2.jpg"
             class="photo"
             alt="Memory 2">
 
+
+        <!-- PHOTO 3 -->
+
         <img
             src="./photo3.jpg"
             class="photo"
             alt="Memory 3">
+
+
+        <!-- PHOTO 4 -->
 
         <img
             src="./photo4.jpg"
@@ -710,11 +976,77 @@ body {
             alt="Memory 4">
 
 
+        <!-- PHOTO 5 -->
+
+        <img
+            src="./photo5.jpeg"
+            class="photo"
+            alt="Memory 5">
+
+
+        <!-- PHOTO 6 -->
+
+        <img
+            src="./photo6.jpeg"
+            class="photo"
+            alt="Memory 6">
+
+
+        <!-- PHOTO 7 -->
+
+        <img
+            src="./photo7.jpeg"
+            class="photo"
+            alt="Memory 7">
+
+
+        <!-- PHOTO 8 -->
+
+        <img
+            src="./photo8.jpeg"
+            class="photo"
+            alt="Memory 8">
+
+
+        <!-- PHOTO 9 -->
+
+        <img
+            src="./photo9.jpeg"
+            class="photo"
+            alt="Memory 9">
+
+
+        <!-- PHOTO 10 -->
+
+        <img
+            src="./photo10.jpeg"
+            class="photo"
+            alt="Memory 10">
+
+
+        <!-- PHOTO 11 -->
+
+        <img
+            src="./photo11.jpeg"
+            class="photo"
+            alt="Memory 11">
+
+
+        <!-- PHOTO 12 -->
+
+        <img
+            src="./photo12.jpeg"
+            class="photo"
+            alt="Memory 12">
+
+
+        <!-- COUNTER -->
+
         <div
             class="counter"
             id="counter">
 
-            MEMORY 01 / 04
+            MEMORY 01 / 12
 
         </div>
 
@@ -723,16 +1055,18 @@ body {
 </section>
 
 
-<!-- =========================
-     FINAL
-========================= -->
+<!-- ========================================
+     FINAL MESSAGE
+======================================== -->
 
 <section class="final">
 
     <div>
 
         <div class="label">
+
             ONE LAST THING...
+
         </div>
 
 
@@ -741,12 +1075,14 @@ body {
             You are<br>
 
             <span class="gold">
+
                 everything
+
             </span>
 
             <br>
 
-            to me.
+            to us.
 
         </h2>
 
@@ -765,7 +1101,9 @@ body {
 
 
         <div class="heart">
+
             ♥
+            
         </div>
 
     </div>
@@ -775,31 +1113,39 @@ body {
 
 <script>
 
-/* =========================
+
+/* ========================================
    MUSIC
-========================= */
+======================================== */
 
 const song =
     document.getElementById("song");
 
+
 const musicButton =
     document.getElementById("musicButton");
+
 
 const musicStatus =
     document.getElementById("musicStatus");
 
 
+/* Start experience */
+
 function startExperience() {
 
     song.play()
+
         .then(function() {
 
-            musicButton.innerHTML = "❚❚";
+            musicButton.innerHTML =
+                "❚❚";
 
             musicStatus.innerHTML =
                 "Now playing";
 
         })
+
         .catch(function() {
 
             musicStatus.innerHTML =
@@ -811,17 +1157,22 @@ function startExperience() {
     document
         .querySelector(".music")
         .scrollIntoView({
+
             behavior: "smooth"
+
         });
 
 }
 
+
+/* Play / pause */
 
 function toggleMusic() {
 
     if (song.paused) {
 
         song.play()
+
             .then(function() {
 
                 musicButton.innerHTML =
@@ -831,6 +1182,7 @@ function toggleMusic() {
                     "Now playing";
 
             })
+
             .catch(function() {
 
                 musicStatus.innerHTML =
@@ -838,7 +1190,9 @@ function toggleMusic() {
 
             });
 
-    } else {
+    }
+
+    else {
 
         song.pause();
 
@@ -853,18 +1207,22 @@ function toggleMusic() {
 }
 
 
-/* =========================
-   SLIDESHOW
-========================= */
+/* ========================================
+   12 PHOTO SLIDESHOW
+======================================== */
 
 const photos =
     document.querySelectorAll(".photo");
 
+
 const counter =
     document.getElementById("counter");
 
+
 let current = 0;
 
+
+/* Change photo */
 
 function changePhoto() {
 
@@ -876,7 +1234,9 @@ function changePhoto() {
 
 
     if (current >= photos.length) {
+
         current = 0;
+
     }
 
 
@@ -885,26 +1245,37 @@ function changePhoto() {
 
 
     counter.innerHTML =
+
         "MEMORY " +
-        String(current + 1).padStart(2, "0") +
+
+        String(current + 1)
+            .padStart(2, "0") +
+
         " / " +
-        String(photos.length).padStart(2, "0");
+
+        String(photos.length)
+            .padStart(2, "0");
 
 }
 
 
 /*
-   Slow cinematic fade.
-   One photo every 6 seconds.
+    Change every 6 seconds.
+    Fade takes 2 seconds.
 */
 
 setInterval(
+
     changePhoto,
+
     6000
+
 );
+
 
 </script>
 
 
 </body>
+
 </html>
