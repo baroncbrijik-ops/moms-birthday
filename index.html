@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Happy Birthday Amma ❤️</title>
 
 <style>
+
+/* =========================
+   BASIC
+========================= */
 
 * {
     margin: 0;
@@ -32,80 +36,37 @@ body {
 ========================= */
 
 .hero {
-
     height: 100vh;
     min-height: 650px;
 
     position: relative;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     text-align: center;
 
-    overflow: hidden;
-
     background:
         linear-gradient(
-            rgba(0,0,0,.5),
+            rgba(0,0,0,.55),
             rgba(0,0,0,.9)
         ),
         url("./photo1.jpg")
-        center center / cover no-repeat;
-
-    animation: zoom 15s ease-in-out infinite alternate;
+        center / cover no-repeat;
 }
-
-
-@keyframes zoom {
-
-    from {
-        background-size: 100%;
-    }
-
-    to {
-        background-size: 110%;
-    }
-
-}
-
-
-.hero::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent 55%,
-            #000 100%
-        );
-
-    pointer-events: none;
-}
-
 
 .hero-content {
-
     position: relative;
-
     z-index: 2;
 
     width: 90%;
-
     max-width: 900px;
 
     animation: fadeIn 2s ease;
 }
 
-
 @keyframes fadeIn {
-
     from {
         opacity: 0;
         transform: translateY(30px);
@@ -115,12 +76,9 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-
 }
 
-
 .label {
-
     color: #d6b56a;
 
     font-family: Arial, sans-serif;
@@ -134,27 +92,19 @@ body {
     margin-bottom: 30px;
 }
 
-
 .hero h1 {
-
     font-size: clamp(65px, 12vw, 150px);
 
     line-height: .82;
 
     font-weight: normal;
-
 }
-
 
 .gold {
-
     color: #d6b56a;
-
 }
 
-
 .hero p {
-
     max-width: 650px;
 
     margin: 45px auto;
@@ -168,16 +118,14 @@ body {
     line-height: 2;
 }
 
-
 .begin {
-
     padding: 17px 35px;
-
-    border: none;
 
     background: #d6b56a;
 
     color: #000;
+
+    border: none;
 
     font-family: Arial, sans-serif;
 
@@ -192,35 +140,11 @@ body {
     transition: .4s;
 }
 
-
 .begin:hover {
-
     transform: translateY(-4px);
 
     box-shadow:
         0 10px 40px rgba(214,181,106,.4);
-}
-
-
-.scroll {
-
-    position: absolute;
-
-    z-index: 3;
-
-    bottom: 30px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    font-family: Arial, sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing: 5px;
-
-    color: #999;
 }
 
 
@@ -229,8 +153,7 @@ body {
 ========================= */
 
 .music {
-
-    min-height: 65vh;
+    min-height: 60vh;
 
     padding: 100px 7%;
 
@@ -252,9 +175,7 @@ body {
         );
 }
 
-
 .music h2 {
-
     font-size: clamp(45px, 7vw, 80px);
 
     font-weight: normal;
@@ -262,13 +183,10 @@ body {
     line-height: .9;
 }
 
-
 .music-button {
-
     margin-top: 50px;
 
     width: 105px;
-
     height: 105px;
 
     border-radius: 50%;
@@ -282,23 +200,15 @@ body {
     font-size: 22px;
 
     cursor: pointer;
-
-    transition: .4s;
 }
 
-
 .music-button:hover {
-
     background: #d6b56a;
 
     color: #000;
-
-    transform: scale(1.08);
 }
 
-
 .music-status {
-
     margin-top: 20px;
 
     color: #777;
@@ -318,23 +228,18 @@ body {
 ========================= */
 
 .message {
-
     padding: 130px 8%;
 
     background: #080808;
 }
 
-
 .message-box {
-
     max-width: 780px;
 
-    margin: 70px auto 0;
+    margin: 60px auto 0;
 }
 
-
 .message-box h2 {
-
     color: #d6b56a;
 
     font-size: clamp(45px, 6vw, 70px);
@@ -344,9 +249,7 @@ body {
     margin-bottom: 45px;
 }
 
-
 .message-box p {
-
     color: #bbb;
 
     font-family: Arial, sans-serif;
@@ -358,9 +261,7 @@ body {
     margin-bottom: 25px;
 }
 
-
 .signature {
-
     color: #d6b56a !important;
 
     font-family: Georgia, serif !important;
@@ -372,11 +273,10 @@ body {
 
 
 /* =========================
-   SLIDESHOW
+   PHOTO SLIDESHOW
 ========================= */
 
-.gallery {
-
+.memories {
     padding: 130px 5%;
 
     background: #000;
@@ -384,20 +284,23 @@ body {
     text-align: center;
 }
 
-
-.gallery h2 {
-
+.memories h2 {
     font-size: clamp(45px, 7vw, 80px);
 
-    font-weight: normal;
-
     line-height: .9;
+
+    font-weight: normal;
 
     margin-bottom: 70px;
 }
 
 
-.slideshow {
+/*
+   PHOTO FRAME
+*/
+
+.photo-frame {
+    position: relative;
 
     width: 100%;
 
@@ -409,7 +312,9 @@ body {
 
     margin: auto;
 
-    position: relative;
+    background: #050505;
+
+    border: 1px solid rgba(214,181,106,.3);
 
     display: flex;
 
@@ -417,29 +322,23 @@ body {
 
     justify-content: center;
 
-    background: #030303;
-
-    border: 1px solid rgba(214,181,106,.25);
-
     overflow: hidden;
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.8);
 }
 
 
 /*
-   IMPORTANT:
-   contain = NEVER CROP THE PHOTO
+   PHOTOS
+
+   contain = the entire photo is shown.
+   Nothing gets cropped.
 */
 
-.slide {
-
+.photo {
     position: absolute;
 
-    max-width: 94%;
+    max-width: 92%;
 
-    max-height: 94%;
+    max-height: 92%;
 
     width: auto;
 
@@ -447,27 +346,49 @@ body {
 
     object-fit: contain;
 
+    display: block;
+
     opacity: 0;
 
-    transition: opacity 1.5s ease;
+    transition:
+        opacity 2s ease-in-out;
 }
 
-
-.slide.active {
-
+.photo.show {
     opacity: 1;
 }
 
 
-.counter {
+/* Cinematic dark edges */
+
+.photo-frame::after {
+    content: "";
 
     position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse,
+            transparent 55%,
+            rgba(0,0,0,.55)
+        );
+}
+
+
+/* Counter */
+
+.counter {
+    position: absolute;
+
+    z-index: 5;
 
     bottom: 20px;
 
     left: 25px;
-
-    z-index: 5;
 
     color: #d6b56a;
 
@@ -484,12 +405,9 @@ body {
 ========================= */
 
 .final {
-
     height: 100vh;
 
     min-height: 650px;
-
-    padding: 50px;
 
     display: flex;
 
@@ -499,6 +417,8 @@ body {
 
     text-align: center;
 
+    padding: 50px;
+
     background:
         radial-gradient(
             circle,
@@ -507,19 +427,15 @@ body {
         );
 }
 
-
 .final h2 {
-
     font-size: clamp(65px, 11vw, 140px);
 
-    font-weight: normal;
-
     line-height: .82;
+
+    font-weight: normal;
 }
 
-
 .final p {
-
     margin-top: 50px;
 
     color: #aaa;
@@ -529,76 +445,23 @@ body {
     line-height: 2;
 }
 
-
 .heart {
-
     margin-top: 40px;
 
     color: #d6b56a;
 
     font-size: 40px;
 
-    animation: heart 1.5s infinite;
+    animation: heartbeat 1.5s infinite;
 }
 
-
-@keyframes heart {
-
-    0%,100% {
+@keyframes heartbeat {
+    0%, 100% {
         transform: scale(1);
     }
 
     50% {
         transform: scale(1.3);
-    }
-
-}
-
-
-/* =========================
-   PARTICLES
-========================= */
-
-.particle {
-
-    position: fixed;
-
-    bottom: -20px;
-
-    z-index: 100;
-
-    color: #d6b56a;
-
-    pointer-events: none;
-
-    animation: float 8s linear forwards;
-}
-
-
-@keyframes float {
-
-    0% {
-
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-        opacity: 0;
-
-    }
-
-    20% {
-        opacity: .7;
-    }
-
-    100% {
-
-        transform:
-            translateY(-110vh)
-            rotate(360deg);
-
-        opacity: 0;
-
     }
 }
 
@@ -607,24 +470,21 @@ body {
    MOBILE
 ========================= */
 
-@media(max-width:700px) {
+@media (max-width: 700px) {
 
     .hero h1 {
         font-size: 70px;
     }
 
-    .scroll {
-        display: none;
-    }
-
-    .slideshow {
+    .photo-frame {
         height: 70vh;
+
         min-height: 400px;
     }
 
-    .slide {
-        max-width: 92%;
-        max-height: 92%;
+    .photo {
+        max-width: 90%;
+        max-height: 90%;
     }
 
     .message {
@@ -646,16 +506,20 @@ body {
 
 
 <!-- =========================
-     MUSIC FILE
+     MUSIC
 ========================= -->
 
-<audio id="song" preload="auto" loop>
-    <source src="./song.mp3" type="audio/mpeg">
+<audio id="song" loop preload="auto">
+
+    <source
+        src="./song.mp3"
+        type="audio/mpeg">
+
 </audio>
 
 
 <!-- =========================
-     OPENING
+     HERO
 ========================= -->
 
 <section class="hero">
@@ -695,7 +559,7 @@ body {
 
         <button
             class="begin"
-            onclick="beginExperience()">
+            onclick="startExperience()">
 
             ✦ BEGIN THE SURPRISE ✦
 
@@ -703,16 +567,11 @@ body {
 
     </div>
 
-
-    <div class="scroll">
-        ↓ SCROLL DOWN ↓
-    </div>
-
 </section>
 
 
 <!-- =========================
-     MUSIC SECTION
+     MUSIC
 ========================= -->
 
 <section class="music">
@@ -725,7 +584,6 @@ body {
     <h2>
 
         Let the music<br>
-
         begin the memories.
 
     </h2>
@@ -808,10 +666,10 @@ body {
 
 
 <!-- =========================
-     PHOTO SLIDESHOW
+     MEMORIES
 ========================= -->
 
-<section class="gallery">
+<section class="memories">
 
     <div class="label">
         OUR MEMORIES
@@ -829,26 +687,26 @@ body {
     </h2>
 
 
-    <div class="slideshow">
+    <div class="photo-frame">
 
         <img
-            class="slide active"
             src="./photo1.jpg"
+            class="photo show"
             alt="Memory 1">
 
         <img
-            class="slide"
             src="./photo2.jpg"
+            class="photo"
             alt="Memory 2">
 
         <img
-            class="slide"
             src="./photo3.jpg"
+            class="photo"
             alt="Memory 3">
 
         <img
-            class="slide"
             src="./photo4.jpg"
+            class="photo"
             alt="Memory 4">
 
 
@@ -918,7 +776,7 @@ body {
 <script>
 
 /* =========================
-   GET ELEMENTS
+   MUSIC
 ========================= */
 
 const song =
@@ -930,25 +788,11 @@ const musicButton =
 const musicStatus =
     document.getElementById("musicStatus");
 
-let musicPlaying = false;
 
-
-/* =========================
-   BEGIN BUTTON
-========================= */
-
-function beginExperience() {
-
-    /*
-       Because this function is called
-       directly by a button click,
-       the browser should allow the music.
-    */
+function startExperience() {
 
     song.play()
         .then(function() {
-
-            musicPlaying = true;
 
             musicButton.innerHTML = "❚❚";
 
@@ -956,15 +800,10 @@ function beginExperience() {
                 "Now playing";
 
         })
-        .catch(function(error) {
-
-            console.log(
-                "Music error:",
-                error
-            );
+        .catch(function() {
 
             musicStatus.innerHTML =
-                "Click ▶ to play music";
+                "Press ▶ to play music";
 
         });
 
@@ -975,15 +814,8 @@ function beginExperience() {
             behavior: "smooth"
         });
 
-
-    startParticles();
-
 }
 
-
-/* =========================
-   PLAY / PAUSE
-========================= */
 
 function toggleMusic() {
 
@@ -992,8 +824,6 @@ function toggleMusic() {
         song.play()
             .then(function() {
 
-                musicPlaying = true;
-
                 musicButton.innerHTML =
                     "❚❚";
 
@@ -1001,23 +831,16 @@ function toggleMusic() {
                     "Now playing";
 
             })
-            .catch(function(error) {
-
-                console.log(
-                    "Music error:",
-                    error
-                );
+            .catch(function() {
 
                 musicStatus.innerHTML =
-                    "Could not play song";
+                    "Unable to play song";
 
             });
 
     } else {
 
         song.pause();
-
-        musicPlaying = false;
 
         musicButton.innerHTML =
             "▶";
@@ -1034,114 +857,51 @@ function toggleMusic() {
    SLIDESHOW
 ========================= */
 
-const slides =
-    document.querySelectorAll(".slide");
+const photos =
+    document.querySelectorAll(".photo");
 
 const counter =
     document.getElementById("counter");
 
-let currentSlide = 0;
+let current = 0;
 
 
-function nextSlide() {
+function changePhoto() {
 
-    slides[currentSlide]
-        .classList.remove("active");
-
-
-    currentSlide++;
+    photos[current]
+        .classList.remove("show");
 
 
-    if (currentSlide >= slides.length) {
+    current++;
 
-        currentSlide = 0;
 
+    if (current >= photos.length) {
+        current = 0;
     }
 
 
-    slides[currentSlide]
-        .classList.add("active");
+    photos[current]
+        .classList.add("show");
 
 
     counter.innerHTML =
         "MEMORY " +
-        String(currentSlide + 1).padStart(2, "0") +
+        String(current + 1).padStart(2, "0") +
         " / " +
-        String(slides.length).padStart(2, "0");
+        String(photos.length).padStart(2, "0");
 
 }
 
 
 /*
-   Change photo every 5 seconds.
+   Slow cinematic fade.
+   One photo every 6 seconds.
 */
 
 setInterval(
-    nextSlide,
-    5000
+    changePhoto,
+    6000
 );
-
-
-/* =========================
-   PARTICLES
-========================= */
-
-let particlesStarted = false;
-
-
-function startParticles() {
-
-    if (particlesStarted) {
-        return;
-    }
-
-
-    particlesStarted = true;
-
-
-    setInterval(function() {
-
-        const particle =
-            document.createElement("div");
-
-
-        particle.className =
-            "particle";
-
-
-        particle.innerHTML =
-            Math.random() > .5
-            ? "✦"
-            : "♥";
-
-
-        particle.style.left =
-            Math.random() * 100 + "vw";
-
-
-        particle.style.fontSize =
-            (Math.random() * 12 + 8) + "px";
-
-
-        particle.style.animationDuration =
-            (Math.random() * 5 + 6) + "s";
-
-
-        document.body.appendChild(
-            particle
-        );
-
-
-        setTimeout(function() {
-
-            particle.remove();
-
-        }, 12000);
-
-
-    }, 700);
-
-}
 
 </script>
 
