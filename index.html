@@ -5,16 +5,11 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Happy Birthday Amma ❤️</title>
 
 <style>
-
-/* =========================================
-   RESET
-========================================= */
 
 * {
     margin: 0;
@@ -34,15 +29,12 @@ body {
 }
 
 
-/* =========================================
+/* =========================
    COVER
-========================================= */
+========================= */
 
 .hero {
-
-    height: 100vh;
-    min-height: 650px;
-
+    min-height: 100vh;
     position: relative;
 
     display: flex;
@@ -51,116 +43,79 @@ body {
 
     text-align: center;
 
+    background: #000;
     overflow: hidden;
+}
+
+
+/* FULL COVER PHOTO */
+
+.hero-photo {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     background: #000;
 }
 
+.hero-photo img {
+    width: 100%;
+    height: 100%;
 
-/*
-   COVER PHOTO
+    object-fit: contain;
 
-   contain = entire photo is visible.
-   No aggressive zooming.
-*/
-
-.hero-background {
-
-    position: absolute;
-
-    inset: 0;
-
-    background-image:
-
-        linear-gradient(
-            rgba(0,0,0,.35),
-            rgba(0,0,0,.75)
-        ),
-
-        url("./photo5.jpeg");
-
-    background-position: center center;
-
-    background-size: contain;
-
-    background-repeat: no-repeat;
-
-    background-color: #000;
-
+    display: block;
 }
 
 
-/*
-   Soft cinematic darkness
-*/
+/* DARK CINEMATIC OVERLAY */
 
-.hero-background::after {
-
+.hero-photo::after {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     background:
-        radial-gradient(
-            ellipse at center,
-            transparent 35%,
-            rgba(0,0,0,.55) 100%
+        linear-gradient(
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.78)
         );
 
+    pointer-events: none;
 }
 
 
-/* =========================================
-   COVER CONTENT
-========================================= */
+/* COVER TEXT */
 
 .hero-content {
-
     position: relative;
-
     z-index: 5;
 
     width: 90%;
-
     max-width: 900px;
 
-    animation:
-        appear 2s ease;
-
+    animation: appear 2s ease;
 }
-
 
 @keyframes appear {
 
     from {
-
         opacity: 0;
-
-        transform:
-            translateY(30px);
-
+        transform: translateY(30px);
     }
 
     to {
-
         opacity: 1;
-
-        transform:
-            translateY(0);
-
+        transform: translateY(0);
     }
 
 }
 
-
-/* =========================================
-   TEXT
-========================================= */
-
 .label {
-
     color: #d6b56a;
 
     font-family: Arial, sans-serif;
@@ -172,35 +127,24 @@ body {
     text-transform: uppercase;
 
     margin-bottom: 30px;
-
 }
-
 
 .hero h1 {
 
     font-size:
-        clamp(
-            65px,
-            12vw,
-            150px
-        );
+        clamp(65px, 12vw, 150px);
 
     line-height: .82;
 
     font-weight: normal;
 
     text-shadow:
-        0 5px 30px rgba(0,0,0,.9);
-
+        0 5px 30px #000;
 }
-
 
 .gold {
-
     color: #d6b56a;
-
 }
-
 
 .hero p {
 
@@ -218,24 +162,20 @@ body {
 
     text-shadow:
         0 3px 15px #000;
-
 }
 
 
-/* =========================================
-   BEGIN BUTTON
-========================================= */
+/* BEGIN BUTTON */
 
 .begin {
 
-    padding:
-        17px 35px;
+    padding: 18px 38px;
+
+    border: none;
 
     background: #d6b56a;
 
     color: #000;
-
-    border: none;
 
     font-family: Arial, sans-serif;
 
@@ -248,32 +188,27 @@ body {
     cursor: pointer;
 
     transition: .4s;
-
 }
-
 
 .begin:hover {
 
-    transform:
-        translateY(-4px);
+    transform: translateY(-4px);
 
     box-shadow:
         0 10px 40px
-        rgba(214,181,106,.45);
-
+        rgba(214,181,106,.5);
 }
 
 
-/* =========================================
+/* =========================
    MUSIC
-========================================= */
+========================= */
 
 .music {
 
-    min-height: 60vh;
+    min-height: 65vh;
 
-    padding:
-        100px 7%;
+    padding: 100px 7%;
 
     display: flex;
 
@@ -291,32 +226,23 @@ body {
             #171208,
             #000 70%
         );
-
 }
-
 
 .music h2 {
 
     font-size:
-        clamp(
-            45px,
-            7vw,
-            80px
-        );
+        clamp(45px, 7vw, 80px);
 
     font-weight: normal;
 
     line-height: .9;
-
 }
-
 
 .music-button {
 
     margin-top: 50px;
 
     width: 105px;
-
     height: 105px;
 
     border-radius: 50%;
@@ -333,9 +259,7 @@ body {
     cursor: pointer;
 
     transition: .4s;
-
 }
-
 
 .music-button:hover {
 
@@ -343,11 +267,8 @@ body {
 
     color: #000;
 
-    transform:
-        scale(1.08);
-
+    transform: scale(1.08);
 }
-
 
 .music-status {
 
@@ -362,23 +283,19 @@ body {
     letter-spacing: 3px;
 
     text-transform: uppercase;
-
 }
 
 
-/* =========================================
+/* =========================
    MESSAGE
-========================================= */
+========================= */
 
 .message {
 
-    padding:
-        130px 8%;
+    padding: 130px 8%;
 
     background: #080808;
-
 }
-
 
 .message-box {
 
@@ -386,27 +303,19 @@ body {
 
     margin:
         60px auto 0;
-
 }
-
 
 .message-box h2 {
 
     color: #d6b56a;
 
     font-size:
-        clamp(
-            45px,
-            6vw,
-            70px
-        );
+        clamp(45px, 6vw, 70px);
 
     font-weight: normal;
 
     margin-bottom: 45px;
-
 }
-
 
 .message-box p {
 
@@ -419,9 +328,7 @@ body {
     line-height: 2;
 
     margin-bottom: 25px;
-
 }
-
 
 .signature {
 
@@ -432,47 +339,38 @@ body {
     font-size: 34px !important;
 
     margin-top: 45px;
-
 }
 
 
-/* =========================================
+/* =========================
    MEMORIES
-========================================= */
+========================= */
 
 .memories {
 
-    padding:
-        130px 5%;
+    padding: 130px 5%;
 
     background: #000;
 
     text-align: center;
-
 }
-
 
 .memories h2 {
 
     font-size:
-        clamp(
-            45px,
-            7vw,
-            80px
-        );
+        clamp(45px, 7vw, 80px);
 
     line-height: .9;
 
     font-weight: normal;
 
     margin-bottom: 70px;
-
 }
 
 
-/* =========================================
-   PHOTO FRAME
-========================================= */
+/* =========================
+   SLIDESHOW
+========================= */
 
 .photo-frame {
 
@@ -505,24 +403,9 @@ body {
     box-shadow:
         0 30px 80px
         rgba(0,0,0,.8);
-
 }
 
-
-/* =========================================
-   SLIDESHOW IMAGE
-========================================= */
-
 #slideshowImage {
-
-    position: absolute;
-
-    top: 50%;
-
-    left: 50%;
-
-    transform:
-        translate(-50%, -50%);
 
     max-width: 94%;
 
@@ -534,24 +417,20 @@ body {
 
     object-fit: contain;
 
+    display: block;
+
     opacity: 1;
 
     transition:
         opacity 1.8s ease-in-out;
-
 }
-
 
 #slideshowImage.fade {
-
     opacity: 0;
-
 }
 
 
-/* =========================================
-   CINEMATIC VIGNETTE
-========================================= */
+/* CINEMATIC EDGES */
 
 .photo-frame::after {
 
@@ -569,13 +448,10 @@ body {
             transparent 50%,
             rgba(0,0,0,.55)
         );
-
 }
 
 
-/* =========================================
-   COUNTER
-========================================= */
+/* COUNTER */
 
 .counter {
 
@@ -594,19 +470,16 @@ body {
     font-size: 10px;
 
     letter-spacing: 3px;
-
 }
 
 
-/* =========================================
-   FINAL MESSAGE
-========================================= */
+/* =========================
+   FINAL
+========================= */
 
 .final {
 
-    height: 100vh;
-
-    min-height: 650px;
+    min-height: 100vh;
 
     display: flex;
 
@@ -624,25 +497,17 @@ body {
             #19140b,
             #000 70%
         );
-
 }
-
 
 .final h2 {
 
     font-size:
-        clamp(
-            65px,
-            11vw,
-            140px
-        );
+        clamp(65px, 11vw, 140px);
 
     line-height: .82;
 
     font-weight: normal;
-
 }
-
 
 .final p {
 
@@ -653,9 +518,7 @@ body {
     font-family: Arial, sans-serif;
 
     line-height: 2;
-
 }
-
 
 .heart {
 
@@ -667,85 +530,56 @@ body {
 
     animation:
         heartbeat 1.5s infinite;
-
 }
-
 
 @keyframes heartbeat {
 
     0%, 100% {
-
-        transform:
-            scale(1);
-
+        transform: scale(1);
     }
 
     50% {
-
-        transform:
-            scale(1.3);
-
+        transform: scale(1.3);
     }
-
 }
 
 
-/* =========================================
+/* =========================
    MOBILE
-========================================= */
+========================= */
 
 @media (max-width: 700px) {
 
     .hero {
-
-        min-height: 600px;
-
+        min-height: 650px;
     }
 
     .hero h1 {
-
         font-size: 70px;
-
     }
 
-    /*
-       On phones, keep the entire
-       cover photo visible.
-    */
-
-    .hero-background {
-
-        background-size: contain;
-
+    .hero-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
     .photo-frame {
-
         height: 70vh;
-
         min-height: 400px;
-
     }
 
     #slideshowImage {
-
         max-width: 90%;
-
         max-height: 90%;
-
     }
 
     .message {
-
-        padding:
-            90px 7%;
-
+        padding: 90px 7%;
     }
 
     .message-box p {
-
         font-size: 15px;
-
     }
 
 }
@@ -758,29 +592,31 @@ body {
 <body>
 
 
-<!-- =========================================
-     MUSIC
-========================================= -->
+<!-- =================================
+     MUSIC FILE
+================================= -->
 
 <audio
     id="song"
+    src="./song.mp3"
     loop
     preload="auto">
-
-    <source
-        src="./song.mp3"
-        type="audio/mpeg">
-
 </audio>
 
 
-<!-- =========================================
+<!-- =================================
      COVER
-========================================= -->
+================================= -->
 
 <section class="hero">
 
-    <div class="hero-background"></div>
+    <div class="hero-photo">
+
+        <img
+            src="./photo5.jpeg"
+            alt="Amma">
+
+    </div>
 
 
     <div class="hero-content">
@@ -798,9 +634,7 @@ body {
             Happy<br>
 
             <span class="gold">
-
                 Birthday
-
             </span><br>
 
             Amma ❤️
@@ -823,7 +657,7 @@ body {
 
         <button
             class="begin"
-            onclick="startExperience()">
+            id="beginButton">
 
             ✦ BEGIN THE SURPRISE ✦
 
@@ -834,9 +668,9 @@ body {
 </section>
 
 
-<!-- =========================================
-     MUSIC SECTION
-========================================= -->
+<!-- =================================
+     MUSIC
+================================= -->
 
 <section class="music">
 
@@ -850,7 +684,6 @@ body {
     <h2>
 
         Let the music<br>
-
         begin the memories.
 
     </h2>
@@ -858,8 +691,7 @@ body {
 
     <button
         class="music-button"
-        id="musicButton"
-        onclick="toggleMusic()">
+        id="musicButton">
 
         ▶
 
@@ -877,9 +709,9 @@ body {
 </section>
 
 
-<!-- =========================================
+<!-- =================================
      MESSAGE
-========================================= -->
+================================= -->
 
 <section class="message">
 
@@ -893,9 +725,7 @@ body {
     <div class="message-box">
 
         <h2>
-
             Dear Amma,
-
         </h2>
 
 
@@ -946,16 +776,14 @@ body {
 </section>
 
 
-<!-- =========================================
-     PHOTO SLIDESHOW
-========================================= -->
+<!-- =================================
+     SLIDESHOW
+================================= -->
 
 <section class="memories">
 
     <div class="label">
-
         OUR MEMORIES
-
     </div>
 
 
@@ -964,34 +792,13 @@ body {
         Moments I'll<br>
 
         <span class="gold">
-
             always treasure.
-
         </span>
 
     </h2>
 
 
     <div class="photo-frame">
-
-
-        <!--
-            SLIDESHOW ORDER:
-
-            1. photo5.jpeg
-            2. photo1.jpg
-            3. photo2.jpg
-            4. photo3.jpg
-            5. photo4.jpg
-            6. photo6.jpeg
-            7. photo7.jpeg
-            8. photo8.jpeg
-            9. photo9.jpeg
-            10. photo10.jpeg
-            11. photo11.jpeg
-            12. photo12.jpeg
-        -->
-
 
         <img
             id="slideshowImage"
@@ -1012,18 +819,16 @@ body {
 </section>
 
 
-<!-- =========================================
+<!-- =================================
      FINAL
-========================================= -->
+================================= -->
 
 <section class="final">
 
     <div>
 
         <div class="label">
-
             ONE LAST THING...
-
         </div>
 
 
@@ -1032,9 +837,7 @@ body {
             You are<br>
 
             <span class="gold">
-
                 everything
-
             </span>
 
             <br>
@@ -1058,9 +861,7 @@ body {
 
 
         <div class="heart">
-
             ♥
-
         </div>
 
     </div>
@@ -1071,101 +872,152 @@ body {
 <script>
 
 
-/* =========================================
+/* =================================
    MUSIC
-========================================= */
+================================= */
 
 const song =
     document.getElementById("song");
 
+const beginButton =
+    document.getElementById("beginButton");
 
 const musicButton =
     document.getElementById("musicButton");
-
 
 const musicStatus =
     document.getElementById("musicStatus");
 
 
-function startExperience() {
+/*
+   BEGIN BUTTON
 
-    song.play()
+   The click itself gives the browser
+   permission to start the music.
+*/
 
-        .then(function() {
+beginButton.addEventListener(
+    "click",
+    function() {
 
-            musicButton.innerHTML =
-                "❚❚";
+        song.volume = 1;
 
-            musicStatus.innerHTML =
-                "Now playing";
-
-        })
-
-        .catch(function() {
-
-            musicStatus.innerHTML =
-                "Press ▶ to play music";
-
-        });
+        const playPromise =
+            song.play();
 
 
-    document
-        .querySelector(".music")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
+        if (playPromise !== undefined) {
 
-}
+            playPromise
+                .then(function() {
+
+                    musicButton.innerHTML =
+                        "❚❚";
+
+                    musicStatus.innerHTML =
+                        "Now playing";
+
+                    beginButton.innerHTML =
+                        "♪ MUSIC PLAYING ♪";
+
+                })
+                .catch(function(error) {
+
+                    console.log(
+                        "Audio error:",
+                        error
+                    );
+
+                    musicStatus.innerHTML =
+                        "Tap ▶ to play music";
+
+                });
+
+        }
 
 
-function toggleMusic() {
-
-    if (song.paused) {
-
-        song.play()
-
-            .then(function() {
-
-                musicButton.innerHTML =
-                    "❚❚";
-
-                musicStatus.innerHTML =
-                    "Now playing";
-
-            })
-
-            .catch(function() {
-
-                musicStatus.innerHTML =
-                    "Unable to play song";
-
+        document
+            .querySelector(".music")
+            .scrollIntoView({
+                behavior: "smooth"
             });
 
     }
-
-    else {
-
-        song.pause();
-
-        musicButton.innerHTML =
-            "▶";
-
-        musicStatus.innerHTML =
-            "Music paused";
-
-    }
-
-}
-
-
-/* =========================================
-   SLIDESHOW
-========================================= */
+);
 
 
 /*
-   EXACT PHOTO FILES
+   MUSIC BUTTON
 */
+
+musicButton.addEventListener(
+    "click",
+    function() {
+
+        if (song.paused) {
+
+            song.play()
+                .then(function() {
+
+                    musicButton.innerHTML =
+                        "❚❚";
+
+                    musicStatus.innerHTML =
+                        "Now playing";
+
+                })
+                .catch(function(error) {
+
+                    console.log(
+                        "Audio error:",
+                        error
+                    );
+
+                    musicStatus.innerHTML =
+                        "Could not play music";
+
+                });
+
+        }
+
+        else {
+
+            song.pause();
+
+            musicButton.innerHTML =
+                "▶";
+
+            musicStatus.innerHTML =
+                "Music paused";
+
+        }
+
+    }
+);
+
+
+/*
+   CHECK IF SONG CAN BE LOADED
+*/
+
+song.addEventListener(
+    "error",
+    function() {
+
+        musicStatus.innerHTML =
+            "song.mp3 was not found";
+
+        console.log(
+            "ERROR: song.mp3 cannot be loaded."
+        );
+
+    }
+);
+
+
+/* =================================
+   SLIDESHOW
+================================= */
 
 const photoList = [
 
@@ -1212,17 +1064,19 @@ let currentPhoto = 0;
 
 
 /*
-   PRELOAD PHOTOS
+   PRELOAD EVERY PHOTO
 */
 
-photoList.forEach(function(file) {
+photoList.forEach(
+    function(file) {
 
-    const image =
-        new Image();
+        const img =
+            new Image();
 
-    image.src = file;
+        img.src = file;
 
-});
+    }
+);
 
 
 /*
@@ -1236,85 +1090,88 @@ function changePhoto() {
     );
 
 
-    setTimeout(function() {
+    setTimeout(
+        function() {
+
+            currentPhoto++;
 
 
-        currentPhoto++;
+            if (
+                currentPhoto >=
+                photoList.length
+            ) {
+
+                currentPhoto = 0;
+
+            }
 
 
-        if (
-            currentPhoto >=
-            photoList.length
-        ) {
-
-            currentPhoto = 0;
-
-        }
+            const next =
+                new Image();
 
 
-        const nextImage =
-            new Image();
+            next.onload =
+                function() {
+
+                    slideshowImage.src =
+                        photoList[currentPhoto];
+
+                    slideshowImage.classList.remove(
+                        "fade"
+                    );
+
+                };
 
 
-        nextImage.onload =
-            function() {
+            next.onerror =
+                function() {
 
-                slideshowImage.src =
-                    photoList[currentPhoto];
+                    console.log(
+                        "Photo not found:",
+                        photoList[currentPhoto]
+                    );
 
-                slideshowImage.classList.remove(
-                    "fade"
-                );
+                    slideshowImage.classList.remove(
+                        "fade"
+                    );
 
-            };
-
-
-        nextImage.onerror =
-            function() {
-
-                console.error(
-                    "Could not load:",
-                    photoList[currentPhoto]
-                );
-
-                slideshowImage.classList.remove(
-                    "fade"
-                );
-
-            };
+                };
 
 
-        nextImage.src =
-            photoList[currentPhoto];
+            next.src =
+                photoList[currentPhoto];
 
 
-        counter.innerHTML =
+            counter.innerHTML =
 
-            "MEMORY " +
+                "MEMORY " +
 
-            String(currentPhoto + 1)
-                .padStart(2, "0") +
+                String(
+                    currentPhoto + 1
+                ).padStart(2, "0") +
 
-            " / " +
+                " / " +
 
-            String(photoList.length)
-                .padStart(2, "0");
+                String(
+                    photoList.length
+                ).padStart(2, "0");
 
 
-    }, 1800);
+        },
+        1800
+    );
 
 }
 
 
 /*
-   7 SECONDS PER PHOTO
+   ONE PHOTO EVERY 7 SECONDS
 */
 
 setInterval(
     changePhoto,
     7000
 );
-
 
 </script>
 
