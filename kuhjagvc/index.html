@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Amma ❤️</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+.gold {
+    color: #d6b56a;
+}
+
+.small-title {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #d6b56a;
+    margin-bottom: 30px;
+}
+
+button {
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+}
+
+
+/* =========================
+   OPENING SCREEN
+========================= */
+
+#home {
+
+    height: 100vh;
+    min-height: 650px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.45),
+            rgba(0,0,0,0.9)
+        ),
+        url("photo1.jpg") center center / cover no-repeat;
+
+    animation: backgroundZoom 15s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundZoom {
+
+    from {
+        background-size: 100%;
+    }
+
+    to {
+        background-size: 110%;
+    }
+}
+
+#home::after {
+
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 60%,
+            #000 100%
+        );
+
+    pointer-events: none;
+}
+
+
+.home-content {
+
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 900px;
+
+    animation: appear 2s ease;
+}
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-title {
+
+    font-size: clamp(65px, 12vw, 150px);
+
+    line-height: 0.82;
+
+    font-weight: normal;
+
+    text-shadow:
+        0 5px 30px rgba(0,0,0,0.9);
+}
+
+.home-subtitle {
+
+    max-width: 650px;
+
+    margin: 45px auto;
+
+    font-family: Arial, sans-serif;
+
+    color: #ccc;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+.start {
+
+    padding: 17px 35px;
+
+    background: #d6b56a;
+
+    color: #080808;
+
+    border: none;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    transition: 0.4s;
+}
+
+.start:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 40px rgba(214,181,106,0.35);
+}
+
+.scroll {
+
+    position: absolute;
+
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 3;
+
+    color: #aaa;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+}
+
+
+/* =========================
+   MUSIC SECTION
+========================= */
+
+.music-section {
+
+    min-height: 65vh;
+
+    padding: 100px 7%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #171208,
+            #000 70%
+        );
+}
+
+.section-title {
+
+    color: #d6b56a;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+}
+
+.music-section h2 {
+
+    font-size: clamp(45px, 7vw, 80px);
+
+    font-weight: normal;
+
+    line-height: 0.9;
+}
+
+.music-button {
+
+    width: 105px;
+    height: 105px;
+
+    margin-top: 50px;
+
+    border-radius: 50%;
+
+    border: 1px solid #d6b56a;
+
+    background: transparent;
+
+    color: #d6b56a;
+
+    font-size: 22px;
+
+    transition: 0.4s;
+}
+
+.music-button:hover {
+
+    background: #d6b56a;
+
+    color: #000;
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 40px rgba(214,181,106,0.3);
+}
+
+.music-status {
+
+    margin-top: 20px;
+
+    color: #777;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message-section {
+
+    padding: 130px 8%;
+
+    background: #080808;
+}
+
+.message {
+
+    max-width: 780px;
+
+    margin: 70px auto 0;
+}
+
+.message h2 {
+
+    color: #d6b56a;
+
+    font-size: clamp(45px, 6vw, 70px);
+
+    font-weight: normal;
+
+    margin-bottom: 45px;
+}
+
+.message p {
+
+    color: #bbb;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+
+    line-height: 2;
+
+    margin-bottom: 25px;
+}
+
+.signature {
+
+    color: #d6b56a !important;
+
+    font-family: Georgia, serif !important;
+
+    font-size: 34px !important;
+
+    margin-top: 45px;
+}
+
+
+/* =========================
+   SLIDESHOW
+========================= */
+
+.slideshow-section {
+
+    padding: 130px 5%;
+
+    background: #000;
+
+    text-align: center;
+}
+
+.slideshow-title {
+
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.slideshow-title h2 {
+
+    font-size: clamp(45px, 7vw, 80px);
+
+    font-weight: normal;
+
+    line-height: 0.9;
+}
+
+
+/*
+   THIS IS THE IMPORTANT PART.
+
+   The slideshow frame does NOT crop images.
+*/
+
+.slideshow {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    height: 75vh;
+
+    min-height: 500px;
+
+    margin: 70px auto 0;
+
+    background: #030303;
+
+    border: 1px solid rgba(214,181,106,0.25);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.8);
+}
+
+
+/*
+   Each image is placed completely
+   inside the frame.
+*/
+
+.slide {
+
+    position: absolute;
+
+    max-width: 94%;
+
+    max-height: 94%;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    opacity: 0;
+
+    transition:
+        opacity 1.5s ease;
+
+    filter:
+        brightness(0.9)
+        contrast(1.05);
+}
+
+.slide.active {
+
+    opacity: 1;
+
+}
+
+
+/* Dark cinematic edges */
+
+.slideshow::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 55%,
+            rgba(0,0,0,0.55) 100%
+        );
+}
+
+
+/* Slideshow number */
+
+.slide-number {
+
+    position: absolute;
+
+    bottom: 25px;
+    left: 30px;
+
+    z-index: 5;
+
+    color: #d6b56a;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   FINAL SCREEN
+========================= */
+
+.final-section {
+
+    height: 100vh;
+
+    min-height: 650px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px;
+
+    background:
+        radial-gradient(
+            circle,
+            #19140b,
+            #000 70%
+        );
+}
+
+.final h2 {
+
+    font-size: clamp(65px, 11vw, 140px);
+
+    font-weight: normal;
+
+    line-height: 0.82;
+}
+
+.final-message {
+
+    margin-top: 50px;
+
+    color: #aaa;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+.heart {
+
+    margin-top: 45px;
+
+    color: #d6b56a;
+
+    font-size: 40px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+
+/* =========================
+   FLOATING PARTICLES
+========================= */
+
+.particle {
+
+    position: fixed;
+
+    bottom: -30px;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    color: #d6b56a;
+
+    animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .home-title {
+        font-size: 70px;
+    }
+
+    .scroll {
+        display: none;
+    }
+
+    .slideshow-section {
+        padding: 90px 5%;
+    }
+
+    .slideshow {
+
+        height: 70vh;
+
+        min-height: 400px;
+
+    }
+
+    .slide {
+
+        max-width: 92%;
+
+        max-height: 92%;
+    }
+
+    .message-section {
+        padding: 90px 7%;
+    }
+
+    .message p {
+        font-size: 15px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<audio id="song" loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- =========================
+     OPENING
+========================= -->
+
+<section id="home">
+
+    <div class="home-content">
+
+        <div class="small-title">
+            A little surprise for someone special
+        </div>
+
+        <h1 class="home-title">
+
+            Happy<br>
+
+            <span class="gold">
+                Birthday
+            </span><br>
+
+            Amma ❤️
+
+        </h1>
+
+        <div class="home-subtitle">
+
+            Some people make the world brighter
+            simply by being in it.
+
+            <br>
+
+            This little surprise was made
+            especially for you.
+
+        </div>
+
+        <button
+            class="start"
+            onclick="begin()">
+
+            ✦ BEGIN THE SURPRISE ✦
+
+        </button>
+
+    </div>
+
+    <div class="scroll">
+        ↓ SCROLL DOWN ↓
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<section class="music-section">
+
+    <div class="section-title">
+        A SONG FOR YOU
+    </div>
+
+    <h2>
+
+        Let the music<br>
+        begin the memories.
+
+    </h2>
+
+    <button
+        class="music-button"
+        id="musicButton"
+        onclick="toggleMusic()">
+
+        ▶
+
+    </button>
+
+    <div
+        class="music-status"
+        id="musicStatus">
+
+        Press play
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MESSAGE
+========================= -->
+
+<section class="message-section">
+
+    <div class="section-title">
+        FROM OUR HEART
+    </div>
+
+    <div class="message">
+
+        <h2>
+            Dear Amma,
+        </h2>
+
+        <p>
+            There are so many things I could say,
+            but somehow words never seem enough
+            when it comes to you.
+        </p>
+
+        <p>
+            Thank you for every smile,
+            every sacrifice, every lesson,
+            every hug, and every little thing
+            you've done for me.
+        </p>
+
+        <p>
+            Thank you for always being there,
+            for making ordinary moments special,
+            and for making life feel a little warmer.
+        </p>
+
+        <p>
+            I hope today reminds you of just
+            how loved and special you are.
+        </p>
+
+        <p class="signature">
+            Happy Birthday, Amma. ❤️
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CINEMATIC SLIDESHOW
+========================= -->
+
+<section class="slideshow-section">
+
+    <div class="slideshow-title">
+
+        <div class="section-title">
+            OUR MEMORIES
+        </div>
+
+        <h2>
+
+            Moments I'll<br>
+
+            <span class="gold">
+                always treasure.
+            </span>
+
+        </h2>
+
+    </div>
+
+
+    <div class="slideshow">
+
+        <img
+            class="slide active"
+            src="photo1.jpg"
+            alt="Memory 1">
+
+        <img
+            class="slide"
+            src="photo2.jpg"
+            alt="Memory 2">
+
+        <img
+            class="slide"
+            src="photo3.jpg"
+            alt="Memory 3">
+
+        <img
+            class="slide"
+            src="photo4.jpg"
+            alt="Memory 4">
+
+
+        <div
+            class="slide-number"
+            id="slideNumber">
+
+            MEMORY 01 / 04
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section class="final-section">
+
+    <div class="final">
+
+        <div class="section-title">
+            ONE LAST THING...
+        </div>
+
+        <h2>
+
+            You are<br>
+
+            <span class="gold">
+                everything
+            </span>
+
+            <br>
+
+            to me.
+
+        </h2>
+
+        <div class="final-message">
+
+            Happy Birthday to the most wonderful
+            mom in the world.
+
+            <br><br>
+
+            May your day be filled with
+            happiness, love and beautiful memories.
+
+        </div>
+
+        <div class="heart">
+            ♥
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =========================
+   MUSIC
+========================= */
+
+const song =
+    document.getElementById("song");
+
+const musicButton =
+    document.getElementById("musicButton");
+
+const musicStatus =
+    document.getElementById("musicStatus");
+
+let playing = false;
+
+
+function begin() {
+
+    song.play().then(() => {
+
+        playing = true;
+
+        musicButton.innerHTML = "❚❚";
+
+        musicStatus.innerHTML =
+            "Now playing";
+
+    }).catch(() => {
+
+        musicStatus.innerHTML =
+            "Press play below";
+
+    });
+
+
+    document
+        .querySelector(".music-section")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+
+    createParticles();
+
+}
+
+
+function toggleMusic() {
+
+    if (playing) {
+
+        song.pause();
+
+        playing = false;
+
+        musicButton.innerHTML = "▶";
+
+        musicStatus.innerHTML =
+            "Music paused";
+
+    } else {
+
+        song.play();
+
+        playing = true;
+
+        musicButton.innerHTML = "❚❚";
+
+        musicStatus.innerHTML =
+            "Now playing";
+
+    }
+
+}
+
+
+/* =========================
+   SLIDESHOW
+========================= */
+
+const slides =
+    document.querySelectorAll(".slide");
+
+const slideNumber =
+    document.getElementById("slideNumber");
+
+let currentSlide = 0;
+
+
+function showSlide(number) {
+
+    slides.forEach((slide) => {
+
+        slide.classList.remove("active");
+
+    });
+
+
+    slides[number].classList.add("active");
+
+
+    slideNumber.innerHTML =
+        "MEMORY " +
+        String(number + 1).padStart(2, "0") +
+        " / " +
+        String(slides.length).padStart(2, "0");
+
+}
+
+
+function nextSlide() {
+
+    currentSlide++;
+
+    if (currentSlide >= slides.length) {
+
+        currentSlide = 0;
+
+    }
+
+    showSlide(currentSlide);
+
+}
+
+
+/* Change photo every 5 seconds */
+
+setInterval(nextSlide, 5000);
+
+
+/* =========================
+   FLOATING PARTICLES
+========================= */
+
+let particlesStarted = false;
+
+
+function createParticles() {
+
+    if (particlesStarted) {
+        return;
+    }
+
+    particlesStarted = true;
+
+
+    setInterval(() => {
+
+        const particle =
+            document.createElement("div");
+
+
+        particle.className =
+            "particle";
+
+
+        particle.innerHTML =
+            Math.random() > 0.5
+            ? "✦"
+            : "♥";
+
+
+        particle.style.left =
+            Math.random() * 100 + "vw";
+
+
+        particle.style.fontSize =
+            (Math.random() * 12 + 8) + "px";
+
+
+        particle.style.animationDuration =
+            (Math.random() * 5 + 6) + "s";
+
+
+        document.body.appendChild(
+            particle
+        );
+
+
+        setTimeout(() => {
+
+            particle.remove();
+
+        }, 12000);
+
+
+    }, 700);
+
+}
+
+</script>
+
+</body>
+
+</html>
